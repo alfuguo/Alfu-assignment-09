@@ -15,8 +15,8 @@ public class RecipeAppController {
     private RecipeService recipeService;
 
     @GetMapping("/")
-    public String hello(){
-        return "Welcome to the Recipe App";
+    public String Homepage(){
+        return "homepage.html";
     }
     @GetMapping("/all-recipes")
     public List<Recipe> getAllRecipes() {
