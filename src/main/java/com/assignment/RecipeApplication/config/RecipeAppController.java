@@ -5,6 +5,7 @@ import com.assignment.RecipeApplication.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -15,8 +16,8 @@ public class RecipeAppController {
     private RecipeService recipeService;
 
     @GetMapping("/")
-    public String Homepage(){
-        return "homepage.html";
+    public RedirectView redirectToHomepage() {
+        return new RedirectView("/homepage.html");
     }
     @GetMapping("/all-recipes")
     public List<Recipe> getAllRecipes() {
